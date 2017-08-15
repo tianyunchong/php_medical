@@ -18,7 +18,6 @@ class BaseController extends Controller
 
     public function initialize()
     {
-        parent::initialize();
         $this->init();
     }
 

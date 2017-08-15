@@ -6,11 +6,6 @@
  * Time: 下午4:17
  */
 use Phalcon\Mvc\View;
-//注册自动加载器
-$namespaceConf = new Phalcon\Config\Adapter\Php(ROOT . '/apps/config/namespace.php');
-$loader        = new Phalcon\Loader();
-$loader->registerNamespaces($namespaceConf->toArray());
-$loader->register();
 //注册下事件管理器
 $di->set('dispatcher', function () {
     $dispatcher   = new \Phalcon\Mvc\Dispatcher();

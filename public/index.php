@@ -11,5 +11,12 @@ use Phalcon\Mvc\Application;
 define("ROOT", dirname(dirname(__FILE__)));
 $di = new FactoryDefault();
 require ROOT . "/apps/config/loaderResource.php";
+require ROOT . "/apps/library/helper/moduleHelper.php";
 $application = new Application($di);
+
+//注册下模块
+$modules     = array('index');
+$modulesConf = \Helper\ModuleHelper::getModuleRegister($modules);
+$application->registerModules($modulesConf);
+
 echo $application->handle()->getContent();
