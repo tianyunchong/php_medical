@@ -9,4 +9,5 @@
 $namespace            = array();
 $namespace['Library'] = ROOT . '/apps/library/';
 $namespace['Helper']  = ROOT . '/apps/library/helper/';
+$namespace['Abstra']  = ROOT . '/apps/library/abstract/';
 return $namespace;

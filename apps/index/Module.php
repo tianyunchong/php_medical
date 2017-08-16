@@ -6,7 +6,6 @@ namespace Index;
 
 use Abstra\ModuleAbstract;
 
-include ROOT . '/apps/library/abstract/ModuleAbstract.php';
 class Module extends ModuleAbstract
 {
 

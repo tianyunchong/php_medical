@@ -20,9 +20,8 @@ abstract class ModuleAbstract
     {
         //注册自动加载器
         $moduleUc      = ucfirst($this->module);
-        $loader        = new \Phalcon\Loader();
-        $namespaceConf = new \Phalcon\Config\Adapter\Php(ROOT . '/apps/config/namespace.php');
-        $namespaceConf = $namespaceConf->toArray();
+        $loader        = $this->di->get("loader");
+        $namespaceConf = $loader->getNamespaces();
         //添加下module的命名空间
         $namespaceConf[$moduleUc . '\Controllers'] = ROOT . '/apps/' . $this->module . '/controllers/';
         $namespaceConf[$moduleUc . '\Services']    = ROOT . '/apps/' . $this->module . '/services/';
