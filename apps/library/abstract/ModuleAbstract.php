@@ -34,20 +34,8 @@ abstract class ModuleAbstract
      */
     public function registerServices($di)
     {
-
         //Registering a dispatcher
-        $di->set('dispatcher', function () {
-            $dispatcher = new \Phalcon\MVC\Dispatcher();
-            $dispatcher->setDefaultNamespace("Index\Controllers");
-            return $dispatcher;
-        });
-
-        //Registering the view component
-        $di->set('view', function () {
-            $view = new \Phalcon\MVC\View();
-            $view->setViewsDir('../apps/' . $this->module . '/views/');
-            return $view;
-        });
+        $di["dispatcher"]->setDefaultNamespace(ucfirst($this->module) . "\Controllers");
     }
 
 }
